@@ -37,7 +37,7 @@ export const getAssignedEvent = (
 
 export const getAssignedEvents = state => eventToBabiesSelectors.getAssignedEvent(state.eventToBabies);
 
-export const getSelectedBay = (
+export const getSelectedBaby = (
   state =>
     selectedBabySelectors.getSelectedBaby(
       state.selectedBaby,

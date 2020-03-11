@@ -4,21 +4,21 @@ import { connect } from 'react-redux';
 
 import './styles.css';
 import * as selectors from '../../reducers';
-import * as actions from '../../actions/trafficLights';
-import TrafficLight from '../TrafficLight';
+import * as actions from '../../actions/babies';
+import Baby from '../Baby';
 
 
-const TrafficLights = ({ number }) => (
+const Babies = ({ number }) => (
   <div className="traffic-lights">
     {
       number === 0 ? (
         <h1>
-          {'No hay semáforos :('}
+          {'No hay bebes :('}
         </h1>
       ) : (
         range(number).map(
           index => (
-            <TrafficLight
+            <Baby
               key={index}
               index={index}
             />
@@ -32,6 +32,6 @@ const TrafficLights = ({ number }) => (
 
 export default connect(
   state => ({
-    number: selectors.getTrafficLights(state).length,
+    number: selectors.getBabies(state).length,
   }),
-)(TrafficLights);
+)(Babies);

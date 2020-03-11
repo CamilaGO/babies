@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 
 import './styles.css';
 import * as selectors from '../../reducers';
-import * as actions from '../../actions/trafficLights';
-import * as selectedActions from '../../actions/selectedTrafficLight';
-import Light from '../Light';
+import * as actions from '../../actions/babies';
+import * as selectedActions from '../../actions/selectedBaby';
+//import Light from '../Light';
+import { getBabies } from '../../reducers/babies';
 
 
 export const COLORS = [
@@ -14,10 +15,8 @@ export const COLORS = [
   'green',
 ];
 
-const TrafficLight = ({
-  turnedOnLight,
+const Baby = ({
   isSelected = false,
-  onChange,
   onClick,
 }) => (
   <div
@@ -31,35 +30,30 @@ const TrafficLight = ({
   >
     <div className="traffic-light">
       {
-        COLORS.map(
-          color => (
+        getBabies(state).map(
+          baby => (
             <Light
-              key={color}
-              color={color}
-              isTurnedOn={color === turnedOnLight}
+              key={baby}
             />
           )
         )
       }
     </div>
-    <button onClick={onChange}>
-      {'Cambiar!'}
-    </button>
+  
   </div>
 );
 
 
 export default connect(
   (state, { index }) => ({
-    turnedOnLight: COLORS[selectors.getTrafficLight(state, index)],
-    isSelected: selectors.getSelectedTrafficLight(state) === index,
+    isSelected: selectors.getSelectedBaby(state) === index,
   }),
   (dispatch, { index }) => ({
-    onChange() {
+    /*onChange() {
       dispatch(actions.changeTrafficLight(index));
-    },
+    },*/
     onClick() {
-      dispatch(selectedActions.selectTrafficLight(index));
+      dispatch(selectedActions.selectBaby(index));
     },
   }),
-)(TrafficLight);
+)(Baby);
