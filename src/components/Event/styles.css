@@ -1,0 +1,27 @@
+.event-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 120px;
+    transition: 0.25s;
+}
+
+.event {
+    background: #CAF8FB;
+    border-radius: 2px;
+    float: left;
+    padding: 10px;
+    display: flex;
+    margin: 7px;
+    flex-direction: column;
+}
+
+.event_info{
+    font-family: 'Tahoma';
+}
+
+.event--selected {
+    color: mediumturquoise;
+    transform: scale(1.1);
+}
+
+

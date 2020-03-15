@@ -37,12 +37,12 @@ const EventForm = ({ onSubmit }) => {
 
 
 export default connect(
-  (state, index) => ({
+  /*(state, index) => ({
     id: selectors.getEvent(state),
-  }),
+  }),*/
+  undefined,
   (dispatch) => ({
     onSubmit(value1, value2) {
-      let idEvent = uuidv4();
       dispatch(
         actions.addEvent(uuidv4(), value1, new Date(), value2),
         console.log('Event added')

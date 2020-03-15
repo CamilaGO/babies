@@ -9,6 +9,7 @@ import ChangeAllTrafficLights from '../ChangeAllTrafficLights';
 import BabyForm from '../BabyForm';
 import Babies from '../Babies';
 import EventForm from '../EventForm';
+import Events from '../Events';
 
 
 const store = configureStore();
@@ -16,6 +17,7 @@ const store = configureStore();
 const App = () => (
   <Provider store={store}>
     <Babies />
+    <Events />
     <BabyForm />
     <EventForm/>
   </Provider>

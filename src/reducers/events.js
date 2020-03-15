@@ -67,7 +67,7 @@ const events = combineReducers({
 export default events;
 
 export const getEvent = (state, id) => state.byId[id];
-export const getEvents = state => state.order.map(
+export const getEvents = (state) => state.order.map(
   id => getEvent(state, id),
 ).filter(event => event != null);
 
