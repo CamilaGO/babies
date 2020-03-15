@@ -17,7 +17,7 @@ import BabyForm from '../BabyForm';
 import EventForm from '../EventForm';
 import Events from '../Events';
 import AllBabies from './AllBabies';
-import TheEvents from './TheEvents';
+import AllEvents from './AllEvents';
 import Nav from './Nav';
 
 
@@ -30,7 +30,7 @@ const App = () => (
         <Nav />
         <Switch>
           <Route path="/allbabies" component={AllBabies}/>
-          <Route path="/theEvents" component={TheEvents} /> 
+          <Route path="/allEvents" component={AllEvents} /> 
         </Switch>     
       </div>
     </Router>

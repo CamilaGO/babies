@@ -15,8 +15,8 @@ function Nav(){
                 <Link style={navStyle} to='/allbabies'>
                     <li>Babies</li>
                 </Link>
-                <Link style={navStyle} to='/theEvents'>
-                    <li>The Events</li>
+                <Link style={navStyle} to='/allevents'>
+                    <li>Events</li>
                 </Link>
             </ul>
         </nav>
