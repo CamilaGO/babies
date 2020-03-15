@@ -1,6 +1,35 @@
+.babyForm-wrapper{
+  background-color: #CAF8FB;
+  width: 400px;
+  height: 400px;
+  position: fixed;
+  margin-top: 160px;
+  margin-left: 450px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.babyForm-title{
+  display: block;
+  color: #445366;
+  font-size: 2.5em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+}
+
 .FormBaby {
-    margin-bottom: 100px;
-  }
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
 
 .FormField {
   margin-bottom: 40px;
@@ -14,9 +43,9 @@
 
 .FormField_Label {
   display: block;
-  font-size: .9em;
   color: mediumturquoise;
   font-size: 1em;
+  font-family: 'Tahoma';
 }
 .FormField_Input {
   width: 85%;
@@ -29,10 +58,12 @@
   font-weight: 300;
   padding-bottom: 10px;
   margin-top: 10px;
+  width: 250px;
 }
 
 .FormField_Input::placeholder {
   color: #445366;
+  font-style: italic;
 }
 
 .SubmitButton{
@@ -40,6 +71,8 @@
     color: mediumturquoise;
     background-color: #445366;
     font-weight: 100;
-    height: 100;
-    size: 50;
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    shape-outside: initial;
 }

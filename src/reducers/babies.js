@@ -16,7 +16,6 @@ const order = (state = [], action) => {
 const byId = (state = {}, action) => {
   switch (action.type) {
     case types.BABY_ADDED: {
-      console.log(state)
       return {
         ...state,
         [action.payload.id]: action.payload, 
@@ -38,6 +37,6 @@ const babies = combineReducers({
 export default babies;
 
 export const getBaby = (state, id) => state.byId[id];
-export const getBabies = state => state.order.map(
+export const getBabies = (state) => state.order.map(
   id => getBaby(state, id),
 ).filter(baby => baby != null);

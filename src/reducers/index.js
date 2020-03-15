@@ -18,13 +18,13 @@ export default reducer;
 
 
 export const getBaby = (state, id) => babiesSelectors.getBaby(state.babies, id);
-export const getBabies = state => babiesSelectors.getBaby(state.babies);
+export const getBabies = state => babiesSelectors.getBabies(state.babies);
 
 export const getEvent = (state, id) => eventsSelectors.getEvent(state.events, id);
-export const getEvents = state => eventsSelectors.getEvent(state.events);
+export const getEvents = state => eventsSelectors.getEvents(state.events);
 
 export const getEventBaby  = (state, babyID) => eventsSelectors.getEventBaby(state.events, babyID);
-export const getEventsBabies = state => eventsSelectors.getEventBaby(state.events);
+export const getEventsBabies = state => eventsSelectors.getEventsBabies(state.events);
 
 
 export const getAssignedEvent = (

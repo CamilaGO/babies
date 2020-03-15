@@ -5,53 +5,49 @@ import './styles.css';
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/babies';
 import * as selectedActions from '../../actions/selectedBaby';
-//import Light from '../Light';
-import { getBabies } from '../../reducers/babies';
 
-
-export const COLORS = [
-  'red',
-  'yellow',
-  'green',
-];
 
 const Baby = ({
+  baby, 
+  name, 
+  lastName, 
   isSelected = false,
-  onClick,
+  onClick
 }) => (
   <div
     className={
       `
-        traffic-light-wrapper
-        ${isSelected ? 'traffic-light--selected' : ''}
+        baby-wrapper
+        ${isSelected ? 'baby--selected' : ''}
       `
     }
     onClick={onClick}
   >
-    <div className="traffic-light">
-      {
-        getBabies(state).map(
-          baby => (
-            <Light
-              key={baby}
-            />
-          )
-        )
-      }
+    <div className="baby">
+
+      <div className="baby_info">
+        {(Object.entries(Object.entries(baby)[1])[1]).slice(1)}
+      </div>
+
+      <div className="baby_info">
+        {(Object.entries(Object.entries(baby)[2])[1]).slice(1)}
+      </div>
+
     </div>
-  
   </div>
 );
 
 
+
 export default connect(
   (state, { index }) => ({
+    baby: index,
+    id: Object.entries(Object.entries(index)[0][1])[0][1],
+    name: Object.entries(Object.entries(index)[0][1]),
+    lastName: Object.entries(Object.entries(index)[0][1])[2][1],
     isSelected: selectors.getSelectedBaby(state) === index,
   }),
   (dispatch, { index }) => ({
-    /*onChange() {
-      dispatch(actions.changeTrafficLight(index));
-    },*/
     onClick() {
       dispatch(selectedActions.selectBaby(index));
     },

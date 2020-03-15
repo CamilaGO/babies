@@ -9,14 +9,14 @@ import Baby from '../Baby';
 
 
 const Babies = ({ number }) => (
-  <div className="traffic-lights">
+  <div className="babies">
     {
-      number === 0 ? (
-        <h1>
+      number.length === 0 ? (
+        <h1 className="warning-title">
           {'No hay bebes :('}
         </h1>
       ) : (
-        range(number).map(
+        (number).map(
           index => (
             <Baby
               key={index}
@@ -32,6 +32,6 @@ const Babies = ({ number }) => (
 
 export default connect(
   state => ({
-    number: selectors.getBabies(state).length,
+    number: selectors.getBabies(state),
   }),
 )(Babies);

@@ -47,7 +47,7 @@ const byBabyID = (state = {}, action) => {
     case types.EVENT_BABY_UNASSIGNED: {
       return {
         ...state,
-        [action.payload.baby]: [...state.payload.baby].filter(b => b !== action.payload.event),
+        [action.payload.baby]: state[action.payload.baby].filter(b => b !== action.payload.event),
       };
     }
     default: {
