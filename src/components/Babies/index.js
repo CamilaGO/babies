@@ -13,7 +13,7 @@ const Babies = ({ number }) => (
     {
       number.length === 0 ? (
         <h1 className="warning-title">
-          {'No hay bebes :('}
+          {'No hay bebes :)'}
         </h1>
       ) : (
         (number).map(
