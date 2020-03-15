@@ -1,7 +1,7 @@
 import * as types from '../types/selectedBaby';
 
 
-export const selectBaby = id => ({
+export const selectBaby = index => ({
   type: types.BABY_SELECTED,
-  payload: id,
+  payload: index,
 });

@@ -6,7 +6,7 @@ import './styles.css';
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/babies';
 
-const ExampleForm = ({ onSubmit }) => {
+const BabyForm = ({ onSubmit }) => {
   const [value1, changeValue1] = useState('');
   const [value2, changeValue2] = useState('');
   return (
@@ -21,13 +21,13 @@ const ExampleForm = ({ onSubmit }) => {
 
       <div className = "FormField"> 
         <label className="FormField_Label" htmlFor="name">APELLIDO</label>
-        <input type="text" className="FormField_Input" placeholder="Apellido" value={value2} onChange={e => changeValue2(e.target.value)}/>
+        <input type="text" className="FormField_Input" placeholder="Ingresa el apellido" value={value2} onChange={e => changeValue2(e.target.value)}/>
       </div>
      
       <button className="SubmitButton" type="submit" onClick={
         () => onSubmit(value1, value2)
       }>
-        {'Enviar'}
+        {'Crear'}
       </button>
     </div>
 
@@ -48,6 +48,6 @@ export default connect(
         );
     },
   }),
-)(ExampleForm);
+)(BabyForm);
 
 

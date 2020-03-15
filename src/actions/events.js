@@ -1,5 +1,4 @@
 import * as types from '../types/events';
-import * as types from '../types/eventToBabies';
 
 
 export const addEvent = (id, type, dateTime, notes) => ({
@@ -12,7 +11,7 @@ export const deleteEvent =  ( id ) => ({
   payload: { id },
 });
 
-export const assignEventToBaby = (baby, trafficLight) => ({
+export const assignEventToBaby = (baby, event) => ({
   type: types.EVENT_BABY_ASSIGNED,
   payload: {
     baby,
@@ -20,7 +19,7 @@ export const assignEventToBaby = (baby, trafficLight) => ({
   }
 }) ;
 
-export const unassignEventToBaby = (baby, trafficLight) => ({
+export const unassignEventToBaby = (baby, event) => ({
   type: types.EVENT_BABY_UNASSIGNED,
   payload: {
     baby,
