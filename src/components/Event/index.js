@@ -7,10 +7,7 @@ import * as actions from '../../actions/events';
 
 
 const Event = ({
-  event, 
-  /*type,
-  date, 
-  notes,*/
+  event,
   onClick
 }) => (
   <div className="event-wrapper" onClick={onClick}>
@@ -33,13 +30,13 @@ const Event = ({
 export default connect(
   (state, { index }) => ({
     event: index,
-    id: Object.entries(Object.entries(index)[0][1])[0][1],
-    /*type: Object.entries(Object.entries(index)[0][1]),
+    /*id: Object.entries(Object.entries(index)[0][1])[0][1],
+    type: Object.entries(Object.entries(index)[0][1]),
     notes: Object.entries(Object.entries(index)[0][1])[2][1]*/
   }),
   (dispatch, { index }) => ({
     onClick() {
-      dispatch(actions.deleteEvent(index));
+      dispatch(actions.deleteEvent(Object.entries(Object.entries(index)[0][1])))
     },
   }),
 )(Event);

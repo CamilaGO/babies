@@ -7,7 +7,6 @@ import * as selectors from '../../reducers';
 import * as actions from '../../actions/events';
 import Event from '../Event';
 
-
 const Events = ({ number }) => (
   <div className="events">
     {

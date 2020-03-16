@@ -1,14 +1,16 @@
 import { v4 as uuidv4 } from 'uuid';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import './styles.css';
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/events';
 
-const EventForm = ({ onSubmit }) => {
+
+const EventForm = ({ onSubmit, babyID }) => {
   const [value1, changeValue1] = useState('');
   const [value2, changeValue2] = useState('');
+  
   return (
     <div className="eventForm-wrapper"> 
       <h1 className="eventForm-title">Agregar Evento</h1> 
@@ -25,7 +27,7 @@ const EventForm = ({ onSubmit }) => {
       </div>
      
       <button className="SubmitButton" type="submit" onClick={
-        () => onSubmit(value1, value2)
+        () => onSubmit(value1, value2, babyID)
       }>
         {'Crear'}
       </button>
@@ -37,15 +39,20 @@ const EventForm = ({ onSubmit }) => {
 
 
 export default connect(
-  /*(state, index) => ({
-    id: selectors.getEvent(state),
-  }),*/
-  undefined,
-  (dispatch) => ({
-    onSubmit(value1, value2) {
+  (state) => ({
+    babyID: Object.entries(selectors.getSelectedBaby(state))[0][1]
+  }),
+  (dispatch, {state}) => ({
+    onSubmit(value1, value2, babyID) {
+      let eventID = uuidv4();
+      console.log(babyID);
       dispatch(
-        actions.addEvent(uuidv4(), value1, new Date(), value2),
+        actions.addEvent(eventID, value1, new Date(), value2),
         console.log('Event added')
+        );
+      dispatch(
+        actions.assignEventToBaby(babyID, eventID),
+        console.log('Event assigned')
         );
     },
   }),

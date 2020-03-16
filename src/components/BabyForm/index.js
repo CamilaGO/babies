@@ -42,8 +42,9 @@ export default connect(
   }),
   dispatch => ({
     onSubmit(value1, value2) {
+      let babyID = uuidv4();
       dispatch(
-        actions.addBaby(uuidv4(), value1, value2),
+        actions.addBaby(babyID, value1, value2),
         console.log('Baby added')
         );
     },

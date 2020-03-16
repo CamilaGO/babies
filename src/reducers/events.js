@@ -47,7 +47,7 @@ const byBabyID = (state = {}, action) => {
     case types.EVENT_BABY_UNASSIGNED: {
       return {
         ...state,
-        [action.payload.baby]: state[action.payload.baby].filter(b => b !== action.payload.event),
+        [action.payload.baby]: [...state.payload.baby].filter(b => b !== action.payload.event),
       };
     }
     default: {
@@ -67,7 +67,7 @@ const events = combineReducers({
 export default events;
 
 export const getEvent = (state, id) => state.byId[id];
-export const getEvents = (state) => state.order.map(
+export const getEvents = (state) => state.order.reverse().map(
   id => getEvent(state, id),
 ).filter(event => event != null);
 
