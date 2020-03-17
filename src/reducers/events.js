@@ -41,7 +41,7 @@ const byBabyID = (state = {}, action) => {
     case types.EVENT_BABY_ASSIGNED: {
       return {
         ...state,
-        [action.payload.baby]: [...state[action.payload.baby], action.payload.event],
+        [action.payload.baby]: [state[action.payload.baby], action.payload.event],
       };
     }
 

@@ -25,7 +25,7 @@ const Events = ({ number }) => (
         )
       )
     }
-  </div>
+  </div>  
 );
 
 
