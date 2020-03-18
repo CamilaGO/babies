@@ -3,7 +3,7 @@
     justify-content: space-around;
     align-items: center;
     min-height: 10vh;
-    background: black;
+    background: #445366;
     color: blanchedalmond;
 }
 
@@ -13,7 +13,7 @@
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    background: black;
+    background: #445366;
     color: blanchedalmond;
 }
 
@@ -33,4 +33,24 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.home-title{
+    margin-top: 50px;
+    margin-bottom:  50px;
+    margin-left: 600px;
+    display: block;
+    color: #445366;
+    font-size: 2.5em;
+    font-family: 'Tahoma';
+    text-transform: uppercase;
+}
+
+.foto-home{
+    margin-left: 375px;
+}
+
+.foto-nav{
+    width: 50px;
+    height: 50px;
+    mask-image: initial;
 }

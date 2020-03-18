@@ -14,15 +14,23 @@ const Event = ({
     <div className="event">
 
       <div className="event_info">
+        <h1 className="titulo-info">Tipo: </h1> 
         {(Object.entries(Object.entries(event)[1])[1]).slice(1)}
       </div>
 
       <div className="event_info">
+        <h1 className="titulo-info">Nota: </h1> 
         {(Object.entries(Object.entries(event)[3])[1]).slice(1)}
       </div>
 
       <div className="event_info">
-        By: {(Object.entries(Object.entries(event)[4])[1]).slice(1)}
+        <h1 className="titulo-info">By: </h1> 
+        {(Object.entries(Object.entries(event)[4])[1]).slice(1)}
+      </div>
+
+      <div className="event_info">
+        <h1 className="titulo-info">Fecha: </h1> 
+        {(Object.entries(Object.entries(event)[2])[1].toString().slice(1,23).replace(/-/g,"")).slice(1)} hrs
       </div>
 
       
@@ -36,9 +44,6 @@ const Event = ({
 export default connect(
   (state, { index }) => ({
     event: index
-    /*id: Object.entries(Object.entries(index)[0][1])[0][1],
-    type: Object.entries(Object.entries(index)[0][1]),
-    notes: Object.entries(Object.entries(index)[0][1])[2][1]*/
   }),
   (dispatch, { index } )=> ({
     onClick() {

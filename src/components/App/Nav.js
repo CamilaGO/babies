@@ -10,7 +10,13 @@ function Nav(){
 
     return (
         <nav className="nav-bar">
-            <h3>Logo</h3>
+            <Link style={navStyle} to='/'>
+                <img 
+                src="https://www.reddingdesigns.com/images/icons/nav-home.png"
+                alt="new" className="foto-nav"
+                />
+            </Link>
+            
             <ul className="nav-links">
                 <Link style={navStyle} to='/allbabies'>
                     <li>Babies</li>

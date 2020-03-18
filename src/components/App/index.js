@@ -19,6 +19,7 @@ import Events from '../Events';
 import AllBabies from './AllBabies';
 import AllEvents from './AllEvents';
 import Nav from './Nav';
+import Home from './Home';
 
 
 const store = configureStore();
@@ -29,6 +30,7 @@ const App = () => (
       <div className="App">
         <Nav />
         <Switch>
+          <Route path="/" exact component={Home}/>
           <Route path="/allbabies" component={AllBabies}/>
           <Route path="/allEvents" component={AllEvents} /> 
         </Switch>     
@@ -36,20 +38,5 @@ const App = () => (
     </Router>
   </Provider>
 );
-
-/*function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Nav />
-        <Switch>
-          <Route path="/main" component={Main}/>
-          <Route path="/theEvents" component={TheEvents} /> 
-        </Switch>     
-      </div>
-    </Router>
-  )
-}*/
-
 
 export default App;

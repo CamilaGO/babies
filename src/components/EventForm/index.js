@@ -54,7 +54,7 @@ export default connect(
   (dispatch, {state}) => ({
     onSubmit(value1, value2, babyID, babyName) {
       let eventID = uuidv4();
-      console.log(babyID);
+      console.log(new Date());
       dispatch(
         actions.addEvent(eventID, value1, new Date(), value2, babyName),
         console.log('Event added')
