@@ -21,6 +21,12 @@ const Event = ({
         {(Object.entries(Object.entries(event)[3])[1]).slice(1)}
       </div>
 
+      <div className="event_info">
+        By: {(Object.entries(Object.entries(event)[4])[1]).slice(1)}
+      </div>
+
+      
+
     </div>
   </div>
 );
@@ -29,14 +35,14 @@ const Event = ({
 
 export default connect(
   (state, { index }) => ({
-    event: index,
+    event: index
     /*id: Object.entries(Object.entries(index)[0][1])[0][1],
     type: Object.entries(Object.entries(index)[0][1]),
     notes: Object.entries(Object.entries(index)[0][1])[2][1]*/
   }),
-  (dispatch, { index }) => ({
+  (dispatch, { index } )=> ({
     onClick() {
-      dispatch(actions.deleteEvent(Object.entries(Object.entries(index)[0][1])))
+      dispatch(actions.deleteEvent(Object.entries(index)[0][1]))
     },
   }),
 )(Event);

@@ -1,3 +1,8 @@
+.baby-selected{
+  font-size: 1rem;
+  font-family: 'Tahoma';
+  font-weight: lighter;
+}
 .eventForm-wrapper{
   background-color: #CAF8FB;
   width: 400px;
@@ -48,6 +53,8 @@
   color: mediumturquoise;
   font-size: 1em;
   font-family: 'Tahoma';
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 .FormField_Input {
   width: 85%;
@@ -66,6 +73,17 @@
 .FormField_Input::placeholder {
   color: #445366;
   font-style: italic;
+}
+
+.FormField_Options{
+  border-radius: 2rem;
+  border-color: mediumturquoise;
+  font-size: 1em;
+  font-family: 'Tahoma';
+  margin-top: 5px;
+  margin-top: 1px;
+  color: #445366;
+  display: inline-block;
 }
 
 .SubmitButton{

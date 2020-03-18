@@ -14,12 +14,13 @@ const EventForm = ({ onSubmit, babyID, babyName }) => {
   return (
     <div className="eventForm-wrapper"> 
       <h1 className="eventForm-title">Agregar Evento</h1>
-  <h1>Bebe seleccionado {babyName}</h1> 
+      <h1 className="baby-selected">Bebe seleccionado: {babyName}</h1> 
 
       <div className="FormEvent">
       <div className = "FormField">
         <label className="FormField_Label" htmlFor="name">TIPO</label>
-        <select value={value1} onChange={e => changeValue1(e.target.value)}>
+        <select className="FormField_Options" value={value1} onChange={e => changeValue1(e.target.value)}>
+            <option value="Ninguna">-Selecciona-</option>
             <option value="Siesta">Siesta</option>
             <option value="Pacha">Pacha</option>
             <option value="Pipi">Pipi</option>
@@ -51,11 +52,11 @@ export default connect(
     babyName: Object.entries(selectors.getSelectedBaby(state))[1][1],
   }),
   (dispatch, {state}) => ({
-    onSubmit(value1, value2, babyID) {
+    onSubmit(value1, value2, babyID, babyName) {
       let eventID = uuidv4();
       console.log(babyID);
       dispatch(
-        actions.addEvent(eventID, value1, new Date(), value2),
+        actions.addEvent(eventID, value1, new Date(), value2, babyName),
         console.log('Event added')
         );
       dispatch(

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import EventForm from '../EventForm';
 import Events from '../Events';
 
+
 function AllEvents(){
     useEffect(() => {
         fetchItems();
